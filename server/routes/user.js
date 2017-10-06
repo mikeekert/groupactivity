@@ -22,12 +22,15 @@ router.get('/logout', function (req, res) {
     res.sendStatus(200);
 });
 
-router.post('/', function (req, res) {
-    console.log(req.user.username);
-    var newToy = new Thing({
-        itemDescription: req.body.itemDescription
-    });
-    newToy.save(function (err) {
+router.put('/', function (req, res) {
+    console.log(req.body.itemDescription);
+
+
+    var newToy = { $push: { item: req.body.itemDescription } };
+    var findUser = { 'username':req.user.username };
+
+
+    Thing.findOneAndUpdate(findUser,newToy, {upsert:true}, function (err) {
         if (err) {
             console.log('connection error', err);
             res.sendStatus(500);

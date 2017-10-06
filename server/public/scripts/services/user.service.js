@@ -39,7 +39,7 @@ myApp.service('UserService', function ($http, $location) {
         }).catch(function (error) {
             console.log(error);
         });
-    }
+    };
 
     self.login = function(userObj) {
         $http.post('/', userObj).then(function(response) {
@@ -48,14 +48,14 @@ myApp.service('UserService', function ($http, $location) {
             $location.path('/user');
         }).catch(function(err) {
             console.log(err);
-        })
-    }
+        });
+    };
 
     self.postItem = function(objToSend){
-        $http.post('/user', objToSend).then(function(response){
+        $http.put('/user', objToSend).then(function(response){
             console.log('our postItem post service worked', response);
          }).catch(function(err){
             console.log('this error on self.post',err);
-         })
-        }
-    })
+         });
+        };
+    });
