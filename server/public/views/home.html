@@ -14,5 +14,14 @@
                 <input class="btn btn-default" type="submit" name="submit" value="Log In" />
                 <a href="#register">Register</a>
             </div>
+            <div class="displayArea">
+                <div ng-repeat="item in lc.shelf.stuff">
+        
+                    {{item.username}}
+                    <div ng-repeat="i in item.item">
+                        {{ i }}
+                    </div>
+                </div>
+            </div>
         </form>
 </div>

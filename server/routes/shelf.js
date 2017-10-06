@@ -3,7 +3,7 @@ var Thing = require('../models/userModel');
 
 
 router.get('/', function(req,res){
-    Thing.find({}, function (err, response) {
+    Thing.find({ item: {$exists:true} }, { username: 1, item: 1 }, function (err, response) {
         if (err) {
             res.sendStatus(500);
         } else {
@@ -12,3 +12,5 @@ router.get('/', function(req,res){
         }
     });
 });
+
+module.exports=router;

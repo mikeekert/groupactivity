@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
 app.use('/', indexRouter);
-app.use('/', shelfRouter);
+app.use('/shelf', shelfRouter);
 
 app.listen(port, function() {
     console.log('listening on port', port);
