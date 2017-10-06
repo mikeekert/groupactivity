@@ -16,5 +16,8 @@ myApp.controller('LoginController', function(UserService) {
         console.log('in login');
         UserService.login(vm.user);
     };
+
+    UserService.getUser();
+    
     
 });

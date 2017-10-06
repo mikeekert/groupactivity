@@ -15,7 +15,7 @@ myApp.service('UserService', function ($http, $location) {
             
             $location.path('/home');
         });
-    }
+    };
 
     self.logout = function() {
         
@@ -59,3 +59,16 @@ myApp.service('UserService', function ($http, $location) {
          });
         };
     });
+
+    // self.getAll = function () {
+    //     $http.get('/shelf').then(function(respFromServer) {
+    //         console.log('respFromServer', respFromServer);
+    //         self.userObj.username = respFromServer.data.username;
+
+    //     }).catch(function(error) {
+    //         // catch block will run when 401
+    //         console.log('error', error);
+            
+    //         $location.path('/home');
+    //     });
+    // };
