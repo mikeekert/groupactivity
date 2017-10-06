@@ -1,0 +1,8 @@
+<div class="container">
+    <h1 id="welcome" class="lead">Welcome, {{uc.userObj.username}}!</h1>
+    <button class="btn btn-default" ng-click="uc.logout()">Log Out</button>
+    <div> 
+        <input placeholder="enter an item" type="text" ng-model="uc.itemIn">
+        <button ng-click="uc.addItem()" class="btn btn-default">Add Item</button>
+    </div>
+</div>
